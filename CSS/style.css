@@ -17,6 +17,9 @@ html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquot
     display: flex;
 }
 
+
+/* style do menu bocznego */
+
 nav {
     width: 20%;
     height: 100vh;
@@ -78,13 +81,41 @@ nav {
 
 .btn-info {
     background-color: white;
-    -webkit-box-shadow: 2px 2px 0px 2px whitesmoke;
-    -moz-box-shadow: 2px 2px 0px 2px whitesmoke;
-    box-shadow: 2px 2px 0px 2px whitesmoke;
+    -webkit-box-shadow: 2px 2px 0px 2px grey;
+    -moz-box-shadow: 2px 2px 0px 2px grey;
+    box-shadow: 2px 2px 0px 2px grey;
     color: black;
 }
 
 .nav__sound{
     align-self: flex-end;
     margin-right: 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/*Style do stołu z grami */
+
+.game {
+    width: 80%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game__cardTable {
+    width: 80%;
+    height: 80vh;
+    background-color: #AEA23D;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    background-color: red;
 }
