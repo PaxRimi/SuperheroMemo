@@ -1,0 +1,44 @@
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font-weight: normal;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+}
+
+nav {
+    width: 25%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #0B0F40;
+    border: 10px solid #84541A;
+    border-radius: 10px;
+    color: white;
+}
+
+.nav__logo {
+    width: 80%;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    color: #DBD074;
+    text-transform: uppercase;
+    font-weight: bolder;
+    text-align: center;
+    border: 2px double #371E00;
+    background-color: #5A5F98;
+}
