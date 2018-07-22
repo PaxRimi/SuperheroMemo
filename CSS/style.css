@@ -42,3 +42,8 @@ nav {
     border: 2px double #371E00;
     background-color: #5A5F98;
 }
+
+.nav__points{
+    font-size: 18px;
+    font-weight: bold;
+}
