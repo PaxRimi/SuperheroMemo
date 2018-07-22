@@ -18,7 +18,7 @@ html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquot
 }
 
 nav {
-    width: 25%;
+    width: 20%;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -35,10 +35,10 @@ nav {
     height: 15vh;
     display: flex;
     align-items: center;
+    justify-content: center;
     color: #DBD074;
     text-transform: uppercase;
     font-weight: bolder;
-    text-align: center;
     border: 2px double #371E00;
     background-color: #5A5F98;
 }
@@ -46,4 +46,45 @@ nav {
 .nav__points{
     font-size: 18px;
     font-weight: bold;
+}
+
+.nav__btn {
+    width: 80%;
+    height: 12vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 25px;
+    font-size: 20px;
+}
+
+.btn-start {
+    background-color: green;
+    -webkit-box-shadow: 2px 2px 0px 2px darkgreen;
+    -moz-box-shadow: 2px 2px 0px 2px darkgreen;
+    box-shadow: 2px 2px 0px 2px darkgreen;
+    color: darkred;
+}
+
+.btn-restart {
+    background-color: red;
+    -webkit-box-shadow: 2px 2px 0px 2px darkred;
+    -moz-box-shadow: 2px 2px 0px 2px darkred;
+    box-shadow: 2px 2px 0px 2px darkred;
+    color: darkgreen;
+}
+
+.btn-info {
+    background-color: white;
+    -webkit-box-shadow: 2px 2px 0px 2px whitesmoke;
+    -moz-box-shadow: 2px 2px 0px 2px whitesmoke;
+    box-shadow: 2px 2px 0px 2px whitesmoke;
+    color: black;
+}
+
+.nav__sound{
+    align-self: flex-end;
+    margin-right: 20px;
 }
