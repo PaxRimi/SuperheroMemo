@@ -104,7 +104,9 @@ nav {
     justify-content: center;
 }
 
+
 .game__cardTable {
+    list-style-type: none;
     width: 80%;
     height: 80vh;
     background-color: #AEA23D;
