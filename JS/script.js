@@ -7,8 +7,15 @@ var listLi = document.querySelectorAll('.game__cardTable li');
 console.log(listLi);
 // Start button
 var startButton = document.getElementById('start');
-
+//Span that count players points
+var points = document.getElementById('score');
+console.log(points);
+//Span that count players moves
+var moves = document.getElementById('score');
+console.log(moves);
+// Array with showing card to check them
 var showCard = [];
+
 
 // Function that start game
 startButton.addEventListener('click', function () {
@@ -28,16 +35,25 @@ startButton.addEventListener('click', function () {
 listLi.forEach(function (element) {
         element.addEventListener('click', function () {
             if (showCard.length !== 2) {
-                var child = this.firstElementChild;
-                console.log(child);
-                child.classList.toggle("black");
-                showCard.push(child);
+                if ( showCard.length === 1) {
+                    if ( showCard[0].parentElement !== this ) {
+                        var child = this.firstElementChild;
+                        console.log(child);
+                        child.classList.toggle("black");
+                        showCard.push(child);
 
-                if (showCard.length === 2) {
-                    checkCard(showCard);
-                    setTimeout(function () {
-                        showCard = []
-                    }, 2500)
+                        if (showCard.length === 2) {
+                            checkCard(showCard);
+                            setTimeout(function () {
+                                showCard = []
+                            }, 2500)
+                        }
+                    }
+                } else {
+                    var child = this.firstElementChild;
+                    console.log(child);
+                    child.classList.toggle("black");
+                    showCard.push(child);
                 }
             };
         });
