@@ -11,7 +11,7 @@ var startButton = document.getElementById('start');
 var points = document.getElementById('score');
 console.log(points);
 //Span that count players moves
-var moves = document.getElementById('score');
+var moves = document.getElementById('moves');
 console.log(moves);
 // Array with showing card to check them
 var showCard = [];
@@ -91,11 +91,13 @@ function checkCard(array) {
     console.log("wszedłem do funkcji");
     if (array[0].getAttribute('src') === array[1].getAttribute('src')) {
         console.log("para");
+        moves.innerText++;
     } else {
         console.log("brak pary");
        setTimeout(function(){
             array[0].classList.toggle('black');
             array[1].classList.toggle('black');}, 2000);
+            moves.innerText++;
 
     }
 }
