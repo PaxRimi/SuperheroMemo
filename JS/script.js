@@ -8,14 +8,21 @@ console.log(listLi);
 // Start button
 var startButton = document.getElementById('start');
 //Span that count players points
+
 var points = document.getElementById('score');
-console.log(points);
+
 //Span that count players moves
 var moves = document.getElementById('moves');
 console.log(moves);
 // Array with showing card to check them
 var showCard = [];
-
+// Add counter that multiple points if you choose couple in a row
+var multiplePointsCounter = 0;
+// Points counter
+var actualPoints = 0 ;
+// Add music player element
+var song = document.getElementById('song');
+console.log(song);
 
 // Function that start game
 startButton.addEventListener('click', function () {
@@ -92,12 +99,24 @@ function checkCard(array) {
     if (array[0].getAttribute('src') === array[1].getAttribute('src')) {
         console.log("para");
         moves.innerText++;
+        multiplePointsCounter++;
+        countPoints();
     } else {
         console.log("brak pary");
        setTimeout(function(){
             array[0].classList.toggle('black');
             array[1].classList.toggle('black');}, 2000);
             moves.innerText++;
+            multiplePointsCounter = 0;
 
     }
+}
+
+//function that count points
+
+function countPoints() {
+    var minPoints = 10;
+    actualPoints += minPoints * multiplePointsCounter;
+
+    points.innerText = actualPoints;
 }
