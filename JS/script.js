@@ -4,7 +4,6 @@ var imglist = document.querySelectorAll('.game__cardTable .card img');
 var srcArr = getSrc(imglist);
 //List of all Li element
 var listLi = document.querySelectorAll('.game__cardTable li');
-console.log(listLi);
 // Start button
 var startButton = document.getElementById('start');
 //Span that count players points
@@ -13,7 +12,7 @@ var points = document.getElementById('score');
 
 //Span that count players moves
 var moves = document.getElementById('moves');
-console.log(moves);
+
 // Array with showing card to check them
 var showCard = [];
 // Add counter that multiple points if you choose couple in a row
@@ -22,7 +21,10 @@ var multiplePointsCounter = 0;
 var actualPoints = 0 ;
 // Add music player element
 var song = document.getElementById('song');
-console.log(song);
+// Add mute icon element
+var mute = document.getElementById('mute');
+// Add play icon element
+var playMusic = document.getElementById('play');
 
 // Function that start game
 startButton.addEventListener('click', function () {
@@ -120,3 +122,17 @@ function countPoints() {
 
     points.innerText = actualPoints;
 }
+
+//Add function that stop music
+mute.addEventListener('click', function () {
+    mute.classList.add("stop");
+    playMusic.classList.remove('active');
+    song.pause();
+});
+
+//Add function that start music
+playMusic.addEventListener("click", function () {
+    playMusic.classList.add('active');
+    mute.classList.remove('stop');
+    song.play();
+})
