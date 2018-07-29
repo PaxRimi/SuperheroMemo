@@ -34,8 +34,22 @@ var interval;
 var highscoreButton = document.getElementById('showHS');
 // Add highscore board
 var highscoreBoard = document.querySelector('.highscore__background');
+// Add wingame board
+var winGameBoard = document.querySelector('.winGame__background');
 // Add button that close hightscore board
 var closeHS = document.querySelectorAll('.closeHS');
+//Add variables for bestStrike
+var bestStrike = 0;
+//Add var that count found couple of cards
+var pair = 0;
+// Add array of found couple of cards
+var arrayOfPair = [];
+// Add win board element
+var playerScore = document.getElementById('playerScore');
+var playerBstrike = document.getElementById('playerBestStrike');
+var playerMoves = document.getElementById('playerMoves');
+var playerTime = document.getElementById('playerTime');
+
 
 // Function that start game
 startButton.addEventListener('click', function () {
@@ -46,7 +60,10 @@ startButton.addEventListener('click', function () {
     actualPoints = 0;
     second = 0;
     minute = 0;
+    bestStrike = 0;
+    pair = 0;
     clearInterval(interval);
+    arrayOfPair = [];
     startTimer();
     // get shuffle array of src to all img
     let deck = shuffle(srcArr);
@@ -66,28 +83,29 @@ startButton.addEventListener('click', function () {
 // Remove class black and show card
 listLi.forEach(function (element) {
         element.addEventListener('click', function () {
-            if (showCard.length !== 2 && Start > 0) {
-                if ( showCard.length === 1) {
-                    if ( showCard[0].parentElement !== this ) {
+            if (arrayOfPair.indexOf(this.firstElementChild) === -1) {
+                if (showCard.length !== 2 && Start > 0) {
+                    if (showCard.length === 1) {
+                        if (showCard[0].parentElement !== this) {
+                            var child = this.firstElementChild;
+                            child.classList.toggle("black");
+                            showCard.push(child);
+
+                            if (showCard.length === 2) {
+                                checkCard(showCard);
+                                setTimeout(function () {
+                                    showCard = []
+                                }, 1500)
+                            }
+                        }
+                    } else {
                         var child = this.firstElementChild;
-                        console.log(child);
                         child.classList.toggle("black");
                         showCard.push(child);
-
-                        if (showCard.length === 2) {
-                            checkCard(showCard);
-                            setTimeout(function () {
-                                showCard = []
-                            }, 1500)
-                        }
                     }
-                } else {
-                    var child = this.firstElementChild;
-                    console.log(child);
-                    child.classList.toggle("black");
-                    showCard.push(child);
                 }
-            };
+
+            }
         });
 
 });
@@ -122,10 +140,18 @@ function getSrc(array) {
 function checkCard(array) {
     console.log("wszedłem do funkcji");
     if (array[0].getAttribute('src') === array[1].getAttribute('src')) {
-        console.log("para");
+        arrayOfPair.push(array[0]);
+        arrayOfPair.push(array[1]);
         moves.innerText++;
         countPoints();
         multiplePointsCounter.innerText++;
+        if (multiplePointsCounter.innerText > bestStrike) {
+            bestStrike = multiplePointsCounter.innerText;
+        }
+        pair++;
+        if (pair === 18){
+            winGame();
+        }
     } else {
         console.log("brak pary");
        setTimeout(function(){
@@ -192,3 +218,18 @@ closeHS.forEach(function (element) {
         this.parentElement.parentElement.classList.add('black');
     });
 });
+
+// Function that show win board to player if he win the game
+
+function winGame() {
+    clearInterval(interval);
+    playerScore.innerText = points.innerText;
+    playerBstrike.innerText = bestStrike;
+    playerMoves.innerText = moves.innerText;
+    playerTime.innerText = timer.innerText;
+    winGameBoard.classList.remove('black');
+    startButton.classList.remove('btn-restart');
+    startButton.classList.add('btn-start');
+    startButton.innerText = "Start";
+    Start = 0;
+}
