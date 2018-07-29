@@ -35,7 +35,7 @@ var highscoreButton = document.getElementById('showHS');
 // Add highscore board
 var highscoreBoard = document.querySelector('.highscore__background');
 // Add button that close hightscore board
-var closeHS = document.getElementById('closeHScore');
+var closeHS = document.querySelectorAll('.closeHS');
 
 // Function that start game
 startButton.addEventListener('click', function () {
@@ -178,12 +178,17 @@ function startTimer(){
         },1000);
 }
 
-// Function that show and hide highscore
+// Function that show highscore
 
 highscoreButton.addEventListener('click', function () {
    highscoreBoard.classList.remove('black');
 });
 
-closeHS.addEventListener('click', function () {
-   highscoreBoard.classList.add('black');
+
+// Function that close all popup board
+
+closeHS.forEach(function (element) {
+    element.addEventListener('click', function () {
+        this.parentElement.parentElement.classList.add('black');
+    });
 });
