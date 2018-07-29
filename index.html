@@ -21,26 +21,29 @@
         <div class="nav__points">
             Moves : <span id="moves">0</span>
         </div>
+        <div class="nav__points">
+            Strike: <span id="pointsX">1</span>x
+        </div>
 
         <a class="nav__btn btn-start" id="start">
             Start
-        </a>
-        <a class="nav__btn btn-restart" id="reset">
-            Restart
         </a>
         <a class="nav__btn btn-info" id="info">
             Info
         </a>
         <div class="music">
-            <i class="fas fa-volume-up active" id="play"></i>
-            <i class="fas fa-volume-off " id="mute"></i>
+            <i class="fas fa-volume-up" id="play"></i>
+            <i class="fas fa-volume-off stop" id="mute"></i>
         </div>
-        <audio autoplay loop hidden="true" id="song">
+        <audio loop hidden="true" id="song">
             <source src="sound/Transformers%20The%20Score%20-%20Arrival%20To%20Earth.mp3" type="audio/mp3" >
             Your browser does not support the audio element.
         </audio>
     </nav>
     <section class="game">
+        <div class="timer">
+            <span id="time">0:00</span>
+        </div>
         <ul class="game__cardTable">
             <li class="card"><img src="SUPERHEROS%20img/Avengers.png" data-info="Avengers"></li>
             <li class="card"><img src="SUPERHEROS%20img/Avengers.png" data-info="Avengers"></li>
