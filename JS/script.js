@@ -52,6 +52,9 @@ startButton.addEventListener('click', function () {
     imglist.forEach(function (element) {
         element.classList.add("black")
     });
+    startButton.classList.remove('btn-start');
+    startButton.classList.add('btn-restart');
+    startButton.innerText = "Restart";
 });
 
 // Remove class black and show card
