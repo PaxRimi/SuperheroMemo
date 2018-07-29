@@ -86,8 +86,8 @@
             <li class="card"><img src="SUPERHEROS%20img/Superman.png" data-info="Super"></li>
         </ul>
     </section>
-    <section class="highscore__background black" >
-            <div class="highscore">
+    <section class="popup__background highscore__background black" >
+            <div class="popup__board highscore">
                 <h2>
                     Hightscore
                 </h2>
@@ -100,6 +100,22 @@
                 </ol>
                 <span id="closeHScore" class="closeHS">close</span>
             </div>
+    </section>
+    <section class="popup__background winGame__background" >
+        <div class="popup__board winGame">
+            <h2>
+                Congratulations!
+            </h2>
+            <p>You win the game! Thank you for your time. This is your stats:</p>
+            <ol>
+                <li>Score: <span id="playerScore"></span></li>
+                <li>BestStrike: <span id="playerBestStrike"></span></li>
+                <li>Moves: <span id="playerMoves"></span></li>
+                <li>Time: <span class="playerTime"></span></li>
+            </ol>
+            <span class="closeHS">close</span>
+
+        </div>
     </section>
 </div>
 <script type="text/javascript" src="JS/script.js"></script>
