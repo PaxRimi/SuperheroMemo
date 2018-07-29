@@ -145,8 +145,8 @@ function checkCard(array) {
         moves.innerText++;
         countPoints();
         multiplePointsCounter.innerText++;
-        if (multiplePointsCounter.innerText > bestStrike) {
-            bestStrike = multiplePointsCounter.innerText;
+        if (Number(multiplePointsCounter.innerText) > bestStrike) {
+            bestStrike = Number(multiplePointsCounter.innerText);
         }
         pair++;
         if (pair === 18){
