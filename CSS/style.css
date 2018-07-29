@@ -158,7 +158,7 @@ nav {
     align-items: center;
 }
 
-.highscore__background {
+.popup__background {
     width: 100%;
     height: 100vh;
     position: fixed;
@@ -166,11 +166,12 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(43, 42, 42, 0.5);
     z-index: 2;
 }
-
-.highscore {
+.highscore__background {
+    background-color: rgba(43, 42, 42, 0.5);
+}
+.popup__board {
     width: 50vw;
     height: 50vh;
     background-color: #371E00;
@@ -181,12 +182,17 @@ nav {
     padding: 20px;
 }
 
-.highscore h2 {
+.popup__board h2 {
     color: goldenrod;
     font-size: 40px;
 }
 
-.highscore ol {
+.popup__board p {
+    color: white;
+    font-size: 18px;
+}
+
+.popup__board ol {
     color: white;
     font-size: 20px;
 }
@@ -204,6 +210,12 @@ nav {
     cursor: pointer;
 }
 
+.winGame__background {
+    background-color: transparent;
+}
+
+
 .black {
     display: none;
 }
+
