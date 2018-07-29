@@ -112,6 +112,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 
@@ -141,4 +142,14 @@ nav {
 
 .black {
     display: none;
+}
+
+.timer {
+    width: 200px;
+    height: 100px;
+    color: white;
+    font-size: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
