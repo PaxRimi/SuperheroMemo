@@ -30,6 +30,12 @@ var timer = document.getElementById("time");
 var second = 0;
 var minute = 0;
 var interval;
+// Add highscore button
+var highscoreButton = document.getElementById('showHS');
+// Add highscore board
+var highscoreBoard = document.querySelector('.highscore__background');
+// Add button that close hightscore board
+var closeHS = document.getElementById('closeHScore');
 
 // Function that start game
 startButton.addEventListener('click', function () {
@@ -156,7 +162,7 @@ playMusic.addEventListener("click", function () {
 
 
 
-
+// Function that count time of the game
 function startTimer(){
    interval = setInterval(function(){
         second++;
@@ -171,3 +177,13 @@ function startTimer(){
         }
         },1000);
 }
+
+// Function that show and hide highscore
+
+highscoreButton.addEventListener('click', function () {
+   highscoreBoard.classList.remove('black');
+});
+
+closeHS.addEventListener('click', function () {
+   highscoreBoard.classList.add('black');
+});
